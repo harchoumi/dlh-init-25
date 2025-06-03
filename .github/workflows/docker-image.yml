@@ -20,6 +20,11 @@ jobs:
         DOCKER_USER: ${{secrets.DOCKER_USERNAME}}
       run: |
         docker build . --file Dockerfile --tag $DOCKER_USER/todolist:latest
+    - name: Docker push
+      env:
+        DOCKER_USER: ${{secrets.DOCKER_USERNAME}}
+      run: |
+        docker push $DOCKER_USER/todolist:latest
     - name: Docker logout
       run: |
         docker logout
