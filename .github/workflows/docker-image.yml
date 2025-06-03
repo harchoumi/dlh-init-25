@@ -12,3 +12,6 @@ jobs:
     - name: docker pull
       run: |
         docker pull harchoumi/todolist
+    - name: ls
+      run: |
+        ls
