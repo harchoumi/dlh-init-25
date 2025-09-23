@@ -1,0 +1,13 @@
+name: Build using Docker
+on: 
+  push:
+    branches: [ "develop" ]
+jobs:
+  build_and_deploy_todolist:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: build todo
+      run: |
+        docker build . --file Dockerfile --tag harchoumi/todolist:latest
+      
