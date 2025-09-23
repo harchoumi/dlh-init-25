@@ -16,4 +16,10 @@ jobs:
     - name: build todo
       run: |
         docker build . --file Dockerfile --tag harchoumi/todolist:latest
+    - name: Push
+      run: |
+        docker push harchoumi/todolist:latest
+    - name: logout
+      run: |
+        docker logout
       
